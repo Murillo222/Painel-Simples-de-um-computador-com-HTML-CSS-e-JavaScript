@@ -1,4 +1,3 @@
- // 1) Escreve um objeto { rótulo: valor } como linhas de uma tabela
 function preencherTabela(id, dados) {
     const tabela = document.getElementById(id);
     tabela.innerHTML = '';
@@ -8,8 +7,6 @@ function preencherTabela(id, dados) {
         linha.insertCell().textContent = valor;
     }
 }
-
-// 2) Navegador e sistema
 function mostrarSistema() {
     preencherTabela('sistema', {
         'Navegador': navigator.userAgent,
@@ -20,8 +17,6 @@ function mostrarSistema() {
         'Online': navigator.onLine ? 'sim' : 'não'
     });
 }
-
-// 3) Tela e janela
 function mostrarTela() {
     preencherTabela('tela', {
         'Resolução da tela': screen.width + ' x ' + screen.height,
@@ -32,8 +27,7 @@ function mostrarTela() {
 
 mostrarSistema();
 mostrarTela();
-window.addEventListener('resize', mostrarTela); // atualiza ao redimensionar
-// 4) Localização (o navegador pede permissão ao usuário)
+window.addEventListener('resize', mostrarTela);
 document.getElementById('btn-local').addEventListener('click', function () {
     const saida = document.getElementById('local');
     saida.textContent = 'Buscando...';
@@ -48,7 +42,6 @@ document.getElementById('btn-local').addEventListener('click', function () {
         }
     );
 });
-// 5) Arquivos escolhidos pelo usuário
 document.getElementById('arquivos').addEventListener('change', function (evento) {
     const dados = {};
 
